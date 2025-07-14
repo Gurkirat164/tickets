@@ -1,0 +1,3 @@
+# Server Counter Service Environment Variables
+SERVER_ADDR=0.0.0.0:8080
+CACHE_URI=redis://redis-server:6379

@@ -1,0 +1,23 @@
+# Sharder Service Environment Variables
+SHARDER_ID=0
+SHARDER_TOTAL=1
+CACHE_URI=redis://redis-server:6379
+CACHE_THREADS=4
+REDIS_ADDR=redis-server:6379
+REDIS_PASSWORD=your_redis_password
+REDIS_THREADS=4
+WORKER_SVC_URI=http://http-gateway:8080
+WORKER_STICKY_COOKIE=your_sticky_cookie
+SENTRY_DSN=your_sentry_dsn
+KAFKA_BROKERS=kafka-server:9092
+KAFKA_TOPIC=tickets_events
+
+# Public Bot Configuration
+SHARDER_TOKEN=your_discord_bot_token
+SHARDER_CLUSTER_SIZE=1
+BOT_ID=your_bot_id
+LARGE_SHARDING_BUCKETS=16
+
+# Whitelabel Configuration (if using)
+DATABASE_URI=postgresql://tickets_user:password@postgres-server:5432/tickets_main
+DATABASE_THREADS=10

@@ -1,0 +1,19 @@
+# Port Allocation for Pterodactyl Services
+
+# Core Services
+HTTP_GATEWAY_PORT=8080      # Main entry point for Discord interactions
+SERVER_COUNTER_PORT=8081    # Server count metrics
+PATREON_PROXY_PORT=8082     # Patreon integration
+VOTE_LISTENER_PORT=8083     # Vote webhooks
+SECURE_PROXY_PORT=8084      # Authentication proxy
+IMAGE_PROXY_PORT=8085       # Image proxy service
+
+# Internal Services (may not need external ports)
+CACHE_SERVICE_PORT=6379     # Redis cache
+SHARDER_SERVICE=N/A         # No HTTP interface
+STATS_UPDATER=N/A           # Background service
+
+# External Dependencies
+POSTGRES_PORT=5432
+REDIS_PORT=6379
+KAFKA_PORT=9092

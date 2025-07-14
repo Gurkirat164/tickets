@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "version": "PTDL_v2",
+    "update_url": null
+  },
+  "exported_at": "2025-07-14T00:00:00+00:00",
+  "name": "Tickets Bot - Rust Service",
+  "author": "admin@example.com",
+  "description": "A Rust-based Discord bot service for the Tickets Bot system",
+  "features": null,
+  "docker_images": {
+    "rust:1-buster": "rust:1-buster"
+  },
+  "file_denylist": [],
+  "startup": "./{{SERVICE_NAME}}",
+  "config": {
+    "files": "{}",
+    "startup": "{\r\n    \"done\": \"Server started successfully\"\r\n}",
+    "logs": "{}",
+    "stop": "^C"
+  },
+  "scripts": {
+    "installation": {
+      "script": "#!/bin/bash\r\n\r\n# Install dependencies\r\napt-get update\r\napt-get install -y curl build-essential pkg-config libssl-dev\r\n\r\n# Install Rust\r\ncurl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y\r\nsource $HOME/.cargo/env\r\n\r\n# Clone repository\r\ncd /mnt/server\r\ngit clone ${GIT_REPO} .\r\n\r\n# Build the specific service\r\ncargo build --release --bin ${SERVICE_NAME}\r\n\r\n# Copy binary to root\r\ncp target/release/${SERVICE_NAME} ./\r\n\r\necho \"Installation completed\"",
+      "container": "rust:1-buster",
+      "entrypoint": "bash"
+    }
+  },
+  "variables": [
+    {
+      "name": "Git Repository",
+      "description": "The Git repository URL",
+      "env_variable": "GIT_REPO",
+      "default_value": "https://github.com/yourusername/tickets-bot.git",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|string"
+    },
+    {
+      "name": "Service Name",
+      "description": "The name of the service binary to build",
+      "env_variable": "SERVICE_NAME",
+      "default_value": "sharder",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|string"
+    }
+  ]
+}

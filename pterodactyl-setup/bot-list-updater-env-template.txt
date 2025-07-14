@@ -1,0 +1,6 @@
+# Bot List Updater Service Environment Variables
+DELAY=300
+BOT_ID=your_bot_id
+BASE_URL=http://server-counter:8080
+DBL_TOKEN=your_discordbotlist_token
+DBOATS_TOKEN=your_discordboats_token

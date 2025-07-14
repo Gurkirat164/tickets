@@ -1,0 +1,15 @@
+# Service Communication Map
+# Update your environment variables to use these internal addresses
+
+# Core Services
+CACHE_URI=redis://cache-service:6379
+DATABASE_URI=postgresql://tickets_user:password@database-service:5432/tickets_main
+KAFKA_BROKERS=kafka-service:9092
+
+# Service Endpoints
+WORKER_SVC_URI=http://http-gateway:8080
+SERVER_COUNTER_URL=http://server-counter:8080/total
+
+# External Services (configure these based on your infrastructure)
+REDIS_ADDR=your-redis-host:6379
+POSTGRES_HOST=your-postgres-host:5432

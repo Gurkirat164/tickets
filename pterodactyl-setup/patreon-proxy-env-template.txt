@@ -1,0 +1,10 @@
+# Patreon Proxy Service Environment Variables
+PATREON_CAMPAIGN_ID=your_patreon_campaign_id
+PATREON_CLIENT_ID=your_patreon_client_id
+PATREON_CLIENT_SECRET=your_patreon_client_secret
+PATREON_REDIRECT_URI=http://your-domain.com/patreon/callback
+SERVER_ADDR=0.0.0.0:8080
+DATABASE_URI=postgresql://tickets_user:password@postgres-server:5432/tickets_patreon
+SENTRY_DSN=your_sentry_dsn
+DEBUG_MODE=false
+JSON_LOG=true

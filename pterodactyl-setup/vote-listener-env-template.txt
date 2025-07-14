@@ -1,0 +1,6 @@
+# Vote Listener Service Environment Variables
+DBL_TOKEN=your_discordbotlist_webhook_token
+SERVER_ADDR=0.0.0.0:8080
+DATABASE_URI=postgresql://tickets_user:password@postgres-server:5432/tickets_votes
+VOTE_URL=https://top.gg/bot/your_bot_id/vote
+RUST_LOG=info
